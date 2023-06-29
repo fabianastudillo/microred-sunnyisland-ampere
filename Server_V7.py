@@ -11,7 +11,7 @@ import logging
 def NewConfiguration(server, route):
         settingRoute = "/home/rpi/Desktop/SetInformation.txt"
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        serverAddress = ("192.168.222.155", 5000)
+        serverAddress = ("192.168.xxx.xxx", 5000)
         sock.bind(serverAddress)
         sock.listen(1)
 
@@ -22,7 +22,7 @@ def NewConfiguration(server, route):
                         print(clientAddress)
                         data = connection.recv(1024).decode()
                         sepData = data.split(';')
-                        if (data.startswith("MICRORRED") and len(sepData) == 3):
+                        if (data.startswith("xxxxxx") and len(sepData) == 3):
                                 d1, d2, d3 = sepData
                                 chanInformation = [d2, d3]
                                 procText.writeText(settingRoute, chanInformation)
@@ -33,7 +33,7 @@ def NewConfiguration(server, route):
                         connection.close()
 
 # **********************************************************************
-server = ModbusServer("192.168.222.155", 502, no_block = True)
+server = ModbusServer("192.168.xxx.xxx", 502, no_block = True)
 
 try:
         horaInicio = datetime.now().strftime("Fecha y hora de Inicio: %Y-%m-%d %H:%M:%S")
