@@ -22,7 +22,7 @@ El sistema permite el monitoreo en tiempo real y control de inversores solares m
 
 ### 1. CommonShellUIMain.c - Gateway YASDI
 
-**Descripción**: Aplicación en C que utiliza la biblioteca YASDI (Yet Another SMA Data Implementation) para comunicarse con inversores Sunny Island mediante protocolo SMA Data.
+**Descripción**: Aplicación en C que utiliza la biblioteca YASDI (Yet Another SMA Data Implementation) para comunicarse con inversores Sunny Island mediante protocolo SMA Data. Este archivo está basado en el archivo del mismo nombre encontrado en [libyasdi/shell](https://github.com/pknowledge/libyasdi/tree/main/shell).
 
 **Funcionalidades**:
 - Detección automática de dispositivos Sunny Island
@@ -266,10 +266,11 @@ Este proyecto forma parte del trabajo de titulación "Integración de los invers
 - Desarrollado en el contexto del laboratorio de Micro-Red
 - Universidad de Cuenca
 - Basado en la biblioteca YASDI de SMA Solar Technology AG
+- **CommonShellUIMain.c** adaptado de la implementación original en [pknowledge/libyasdi](https://github.com/pknowledge/libyasdi/)
 
 ## Licencia
 
-- **CommonShellUIMain.c**: Basado en YASDI (LGPL 2.1)
+- **CommonShellUIMain.c**: Basado en YASDI (LGPL 2.1) - Adaptado del archivo original en [libyasdi/shell](https://github.com/pknowledge/libyasdi/tree/main/shell)
 - **Server.py**: Código desarrollado para el proyecto de titulación
 
 ## Referencias

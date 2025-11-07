@@ -8,7 +8,7 @@ This project implements the integration of **Sunny Island** and **Ampere Square*
 
 The system enables real-time monitoring and control of solar inverters through:
 - **YASDI Gateway** for Sunny Island inverters (CommonShellUIMain.c)
-- **Modbus TCP Server** for SCADA system communication (Server_V7.py)
+- **Modbus TCP Server** for SCADA system communication (Server.py)
 - LabVIEW integration for visualization and control
 
 ### System Architecture
@@ -22,7 +22,7 @@ The system enables real-time monitoring and control of solar inverters through:
 
 ### 1. CommonShellUIMain.c - YASDI Gateway
 
-**Description**: C application that uses the YASDI library (Yet Another SMA Data Implementation) to communicate with Sunny Island inverters via SMA Data protocol.
+**Description**: C application that uses the YASDI library (Yet Another SMA Data Implementation) to communicate with Sunny Island inverters via SMA Data protocol. This file is based on the file with the same name found in [libyasdi/shell](https://github.com/pknowledge/libyasdi/tree/main/shell).
 
 **Features**:
 - Automatic detection of Sunny Island devices
@@ -31,7 +31,7 @@ The system enables real-time monitoring and control of solar inverters through:
 - Writing configuration parameters
 - Data file generation for Modbus server
 
-### 2. Server_V7.py - Modbus TCP Server
+### 2. Server.py - Modbus TCP Server
 
 **Description**: Modbus TCP server developed in Python that acts as a bridge between YASDI Gateway data and the SCADA system.
 
@@ -152,10 +152,10 @@ gcc -std=c99 -o CommonShellUIMain CommonShellUIMain.c \
 
 ```bash
 # Run Modbus TCP server
-python3 Server_V7.py
+python3 Server.py
 ```
 
-**Network configuration**: Edit IP addresses in Server_V7.py before running:
+**Network configuration**: Edit IP addresses in Server.py before running:
 ```python
 # Change "192.168.xxx.xxx" to Raspberry Pi IP
 server = ModbusServer("192.168.1.100", 502, no_block=True)
@@ -299,10 +299,11 @@ This project is part of the thesis work "Integration of Sunny Island and Ampere 
 - Developed in the context of the Micro-Grid laboratory
 - University of Cuenca
 - Based on YASDI library by SMA Solar Technology AG
+- **CommonShellUIMain.c** adapted from the original implementation in [pknowledge/libyasdi](https://github.com/pknowledge/libyasdi/)
 
 ## License
 
-- **CommonShellUIMain.c**: Based on YASDI (LGPL 2.1)
+- **CommonShellUIMain.c**: Based on YASDI (LGPL 2.1) - Adapted from the original file in [libyasdi/shell](https://github.com/pknowledge/libyasdi/tree/main/shell)
 - **Server.py**: Code developed for the thesis project
 
 ## References
