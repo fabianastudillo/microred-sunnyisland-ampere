@@ -303,7 +303,7 @@ This project is part of the thesis work "Integration of Sunny Island and Ampere 
 ## License
 
 - **CommonShellUIMain.c**: Based on YASDI (LGPL 2.1)
-- **Server_V7.py**: Code developed for the thesis project
+- **Server.py**: Code developed for the thesis project
 
 ## References
 
@@ -319,7 +319,7 @@ microred-sunnyisland-ampere/
 ├── README.md                 # Spanish documentation
 ├── README.en.md             # English documentation
 ├── CommonShellUIMain.c      # YASDI Gateway (C application)
-├── Server_V7.py            # Modbus TCP Server (Python)
+├── Server.py            # Modbus TCP Server (Python)
 ├── ReadTextFile.py         # Text processing module (Python)
 ├── yasdi.ini               # YASDI configuration file
 ├── Makefile                # Build automation

@@ -8,7 +8,7 @@ Este proyecto implementa la integración de inversores **Sunny Island** y **Ampe
 
 El sistema permite el monitoreo en tiempo real y control de inversores solares mediante:
 - **Gateway YASDI** para inversores Sunny Island (CommonShellUIMain.c)
-- **Servidor Modbus TCP** para comunicación con el sistema SCADA (Server_V7.py)
+- **Servidor Modbus TCP** para comunicación con el sistema SCADA (Server.py)
 - Integración con LabVIEW para visualización y control
 
 ### Arquitectura del Sistema
@@ -31,7 +31,7 @@ El sistema permite el monitoreo en tiempo real y control de inversores solares m
 - Escritura de parámetros de configuración
 - Generación de archivos de datos para el servidor Modbus
 
-### 2. Server_V7.py - Servidor Modbus TCP
+### 2. Server.py - Servidor Modbus TCP
 
 **Descripción**: Servidor Modbus TCP desarrollado en Python que actúa como puente entre los datos del Gateway YASDI y el sistema SCADA.
 
@@ -152,10 +152,10 @@ gcc -std=c99 -o CommonShellUIMain CommonShellUIMain.c \
 
 ```bash
 # Ejecutar el servidor Modbus TCP
-python3 Server_V7.py
+python3 Server.py
 ```
 
-**Configuración de red**: Editar las direcciones IP en Server_V7.py antes de ejecutar:
+**Configuración de red**: Editar las direcciones IP en Server.py antes de ejecutar:
 ```python
 # Cambiar "192.168.xxx.xxx" por la IP de la Raspberry Pi
 server = ModbusServer("192.168.1.100", 502, no_block=True)
@@ -270,7 +270,7 @@ Este proyecto forma parte del trabajo de titulación "Integración de los invers
 ## Licencia
 
 - **CommonShellUIMain.c**: Basado en YASDI (LGPL 2.1)
-- **Server_V7.py**: Código desarrollado para el proyecto de titulación
+- **Server.py**: Código desarrollado para el proyecto de titulación
 
 ## Referencias
 
